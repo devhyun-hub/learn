@@ -2,23 +2,23 @@
  * @module ol/source/Vector
  */
 
-import Collection from '../Collection.js';
-import CollectionEventType from '../CollectionEventType.js';
-import Event from '../events/Event.js';
-import EventType from '../events/EventType.js';
-import ObjectEventType from '../ObjectEventType.js';
-import RBush from '../structs/RBush.js';
-import Source from './Source.js';
-import VectorEventType from './VectorEventType.js';
-import {TRUE, VOID} from '../functions.js';
-import {all as allStrategy} from '../loadingstrategy.js';
-import {assert} from '../asserts.js';
-import {containsExtent, equals, wrapAndSliceX} from '../extent.js';
-import {extend} from '../array.js';
-import {getUid} from '../util.js';
-import {isEmpty} from '../obj.js';
-import {listen, unlistenByKey} from '../events.js';
-import {xhr} from '../featureloader.js';
+import Collection from "../Collection.js";
+import CollectionEventType from "../CollectionEventType.js";
+import Event from "../events/Event.js";
+import EventType from "../events/EventType.js";
+import ObjectEventType from "../ObjectEventType.js";
+import RBush from "../structs/RBush.js";
+import Source from "./Source.js";
+import VectorEventType from "./VectorEventType.js";
+import { TRUE, VOID } from "../functions.js";
+import { all as allStrategy } from "../loadingstrategy.js";
+import { assert } from "../asserts.js";
+import { containsExtent, equals, wrapAndSliceX } from "../extent.js";
+import { extend } from "../array.js";
+import { getUid } from "../util.js";
+import { isEmpty } from "../obj.js";
+import { listen, unlistenByKey } from "../events.js";
+import { xhr } from "../featureloader.js";
 
 /**
  * A function that takes an {@link module:ol/extent~Extent} and a resolution as arguments, and
@@ -183,7 +183,7 @@ class VectorSource extends Source {
       attributions: options.attributions,
       interpolate: true,
       projection: undefined,
-      state: 'ready',
+      state: "ready",
       wrapX: options.wrapX !== undefined ? options.wrapX : true,
     });
 
@@ -997,7 +997,9 @@ class VectorSource extends Source {
             );
           }
         );
-        loadedExtentsRtree.insert(extentToLoad, {extent: extentToLoad.slice()});
+        loadedExtentsRtree.insert(extentToLoad, {
+          extent: extentToLoad.slice(),
+        });
       }
     }
     this.loading =

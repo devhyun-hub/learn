@@ -1,7 +1,8 @@
 /**
  * @module ol/structs/RBush
  */
-import RBush_ from "./RBush.js";
+import RBush_ from "../../js/rbush.js";
+//import RBush_ from "https://cdn.jsdelivr.net/npm/rbush/+esm"; // RBush 모듈 가져오기
 import { createOrUpdate, equals } from "../extent.js";
 import { getUid } from "../util.js";
 import { isEmpty } from "../obj.js";

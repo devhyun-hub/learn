@@ -7,12 +7,45 @@
     <link rel="stylesheet" href="ol/ol.css" />
     <link rel="stylesheet" href="css/map.css" />
     <script src="ol/dist/ol.js"></script>
+    <!--type주의-->
     <script type="module" src="js/map.js"></script>
   </head>
   <body>
-    <div id="map">
-      <input type="button" id="zoomIn" value="+" onclick="zoomIn()" />
-      <input type="button" id="zoomOut" value="-" onclick="zoomOut()" />
+    <div id="map"></div>
+
+    <div class="left-panel" data-container="leftPanel" style="top: 60px">
+      <button
+        class="btn-left-panel"
+        data-target-element="[data-container=leftPanel]"
+        data-button-toggle="left-open"
+      >
+        <span></span>
+      </button>
+      <dl>
+        <dt>
+          <strong>레이어 범례</strong>
+          <div class="btn-set">
+            <button class="btn-plus"><span class="hidden">추가</span></button>
+            <button class="btn-minus"><span class="hidden">삭제</span></button>
+          </div>
+        </dt>
+        <dd>
+          <div class="layer-setting">
+            <span class="setting-title">레이어 설정</span>
+            <span class="searchclear" style="display: none">X</span>
+            <input
+              type="text"
+              style="width: 100%"
+              id="keyword"
+              placeholder="검색어 입력"
+            />
+          </div>
+
+          <div class="menu-tree"></div>
+        </dd>
+      </dl>
     </div>
+
+    <div id="info">&nbsp;</div>
   </body>
 </html>

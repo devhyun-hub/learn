@@ -1,14 +1,14 @@
 /**
  * @module ol/layer/Layer
  */
-import BaseLayer from './Base.js';
-import EventType from '../events/EventType.js';
-import LayerProperty from './Property.js';
-import RenderEventType from '../render/EventType.js';
-import View from '../View.js';
-import {assert} from '../asserts.js';
-import {intersects} from '../extent.js';
-import {listen, unlistenByKey} from '../events.js';
+import BaseLayer from "./Base.js";
+import EventType from "../events/EventType.js";
+import LayerProperty from "./Property.js";
+import RenderEventType from "../render/EventType.js";
+import View from "../View.js";
+import { assert } from "../asserts.js";
+import { intersects } from "../extent.js";
+import { listen, unlistenByKey } from "../events.js";
 
 /**
  * @typedef {function(import("../Map.js").FrameState):HTMLElement} RenderFunction
@@ -220,7 +220,7 @@ class Layer extends BaseLayer {
    */
   getSourceState() {
     const source = this.getSource();
-    return !source ? 'undefined' : source.getState();
+    return !source ? "undefined" : source.getState();
   }
 
   /**
@@ -228,11 +228,11 @@ class Layer extends BaseLayer {
    */
   handleSourceChange_() {
     this.changed();
-    if (this.sourceReady_ || this.getSource().getState() !== 'ready') {
+    if (this.sourceReady_ || this.getSource().getState() !== "ready") {
       return;
     }
     this.sourceReady_ = true;
-    this.dispatchEvent('sourceready');
+    this.dispatchEvent("sourceready");
   }
 
   /**
@@ -252,10 +252,10 @@ class Layer extends BaseLayer {
         this.handleSourceChange_,
         this
       );
-      if (source.getState() === 'ready') {
+      if (source.getState() === "ready") {
         this.sourceReady_ = true;
         setTimeout(() => {
-          this.dispatchEvent('sourceready');
+          this.dispatchEvent("sourceready");
         }, 0);
       }
     }

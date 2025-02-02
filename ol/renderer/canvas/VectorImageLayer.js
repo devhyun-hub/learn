@@ -1,15 +1,15 @@
 /**
  * @module ol/renderer/canvas/VectorImageLayer
  */
-import CanvasImageLayerRenderer from './ImageLayer.js';
-import CanvasVectorLayerRenderer from './VectorLayer.js';
-import EventType from '../../events/EventType.js';
-import ImageCanvas from '../../ImageCanvas.js';
-import ImageState from '../../ImageState.js';
-import RBush from 'rbush';
-import ViewHint from '../../ViewHint.js';
-import {apply, compose, create} from '../../transform.js';
-import {getHeight, getWidth, isEmpty, scaleFromCenter} from '../../extent.js';
+import CanvasImageLayerRenderer from "./ImageLayer.js";
+import CanvasVectorLayerRenderer from "./VectorLayer.js";
+import EventType from "../../events/EventType.js";
+import ImageCanvas from "../../ImageCanvas.js";
+import ImageState from "../../ImageState.js";
+import RBush from "../../structs/RBush.js";
+import ViewHint from "../../ViewHint.js";
+import { apply, compose, create } from "../../transform.js";
+import { getHeight, getWidth, isEmpty, scaleFromCenter } from "../../extent.js";
 
 /**
  * @classdesc
@@ -108,7 +108,7 @@ class CanvasVectorImageLayerRenderer extends CanvasImageLayerRenderer {
       const context = vectorRenderer.context;
       const layerState = frameState.layerStatesArray[frameState.layerIndex];
       context.globalAlpha = layerState.opacity;
-      const imageLayerState = Object.assign({}, layerState, {opacity: 1});
+      const imageLayerState = Object.assign({}, layerState, { opacity: 1 });
       const imageFrameState = /** @type {import("../../Map.js").FrameState} */ (
         Object.assign({}, frameState, {
           declutterTree: new RBush(9),
